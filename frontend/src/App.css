@@ -260,3 +260,161 @@ body {
   font-size: 0.8rem;
   color: #999;
 }
+
+/* --- 툴바 스타일 --- */
+.toolbar {
+  display: flex;
+  gap: 8px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tool-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #444;
+  transition: all 0.2s;
+}
+
+.tool-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.tool-btn.add-digit {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-color: #bbdefb;
+}
+
+.divider {
+  width: 1px;
+  background: #ddd;
+  margin: 0 5px;
+}
+
+/* --- 유동적 수식 영역 --- */
+.equation-scroll-area {
+  width: 100%;
+  overflow-x: auto; /* 내용이 넘치면 가로 스크롤 */
+  padding-bottom: 20px;
+}
+
+.equation-area-flexible {
+  display: inline-flex; /* 가로로 쭉 나열 */
+  align-items: center;
+  gap: 8px;
+  min-width: 100%;
+  padding: 10px;
+}
+
+/* --- 블록 래퍼 및 애니메이션 --- */
+.block-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- 심볼 블록 (연산자, 괄호 등) --- */
+.symbol-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 60px;
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.symbol-block.operator {
+  background-color: #fff3e0; /* 연산자는 연한 주황색 */
+  border-color: #ffe0b2;
+}
+
+.symbol-block.special {
+  background-color: #f3e5f5; /* 특수기호는 연한 보라색 */
+  border-color: #e1bee7;
+  color: #7b1fa2;
+}
+
+.symbol-block select {
+  font-size: 24px;
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
+
+/* 닫기 버튼 (작은 X) */
+.mini-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  display: none; /* 평소엔 숨김 */
+  align-items: center;
+  justify-content: center;
+}
+
+.block-wrapper:hover .mini-close {
+  display: flex; /* 마우스 올리면 보임 */
+}
+
+/* --- 하단 계산 버튼 영역 --- */
+.footer-calculate {
+  margin-top: 30px;
+  text-align: center;
+  border-top: 2px solid #eee;
+  padding-top: 20px;
+}
+
+.result-label {
+  font-size: 20px;
+  color: #666;
+}
+
+/* 초기화 버튼 전용 스타일 */
+.reset-btn {
+  background-color: #fff;
+  color: #d32f2f; /* 빨간색 텍스트 */
+  border: 1px solid #ffcdd2;
+}
+
+.reset-btn:hover {
+  background-color: #ffebee; /* 연한 빨간 배경 */
+  border-color: #ef9a9a;
+}
