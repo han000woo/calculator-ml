@@ -93,7 +93,7 @@ const CalculatorPage = () => {    // 상태 관리
 
                 {/* 추가 버튼 */}
                 <button onClick={addTerm} className="add-btn">
-                    + 칸 추가
+                    칸 추가
                 </button>
             </div>
 

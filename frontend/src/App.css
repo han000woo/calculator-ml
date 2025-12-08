@@ -10,6 +10,11 @@ body {
   margin-bottom: 40px;
 }
 
+.layout-content {
+  padding: 10px;
+  width: 100%;
+}
+
 /* 수식 영역 레이아웃 */
 .equation-area {
   display: flex;
@@ -29,7 +34,6 @@ body {
 
 .canvas-wrapper {
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .digit-canvas {
@@ -80,9 +84,10 @@ body {
 }
 
 .operator-select {
-  font-size: 20px;
+  font-size: 50px;
   padding: 5px;
   border: none;
+  margin-bottom: 20px;
   background: transparent;
   font-weight: bold;
   cursor: pointer;
@@ -90,18 +95,17 @@ body {
 }
 
 .add-btn {
-  padding: 0 20px;
-  font-size: 16px;
-  background-color: #eee;
-  border: 2px dashed #aaa;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #555;
-  height: 156px;
-  /* 캔버스 높이 + 보더 고려 */
-  display: flex;
-  align-items: center;
-  transition: background 0.2s;
+    font-size: 16px;
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #555;
+    height: 90px;
+    width: 90px;
+    align-items: center;
+    transition: background 0.2s;
+    margin-left: 20px;
+    margin-bottom: 30px;
 }
 
 .add-btn:hover {
