@@ -2,7 +2,7 @@
 
 export const fetchPrediction = async (imageDataUrl: string): Promise<number | null> => {
   try {
-    const res = await fetch("http://localhost:8000/predict", {
+    const res = await fetch("/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ image: imageDataUrl }),
