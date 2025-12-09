@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import DigitCanvas from "../components/DigitCanvas";
 import "../App.css";
 
@@ -51,7 +51,7 @@ const CalculatorPage = () => {
     
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      const nextItem = items[i + 1];
+      // const nextItem = items[i + 1];
 
       // 값 처리
       if (item.type === "DIGIT") {

@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow import keras 
 from keras.utils import to_categorical
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
@@ -47,15 +48,21 @@ model.compile(
     metrics=['accuracy']
 )
 
+# checkpoint_cb = keras.callbacks.ModelCheckpoint('best-cnn-model.keras', save_best_only=True)
+# early_stopping_cb = keras.callbacks.EarlyStopping(patience=4, restore_best_weights = True) 
+
 model.fit(
     X_train, Y_train,
     validation_data=(X_test, Y_test),
     epochs=15,
     batch_size=128,
-    verbose=2
+    verbose=2,
+    # callbacks=[checkpoint_cb, early_stopping_cb]
 )
 
 print("\nTrain Acc: ", model.evaluate(X_train, Y_train)[1])
 print("Test Acc: ", model.evaluate(X_test, Y_test)[1])
-
+# Train Acc:  0.9941666722297668
+# 313/313 ━━━━━━━━━━━━━━━━━━━━ 1s 2ms/step - accuracy: 0.9865 - loss: 0.0524     
+# Test Acc:  0.9865000247955322
 model.save("../models/mnist_model.keras")
